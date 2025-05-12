@@ -1,0 +1,28 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+//Faça um programa que receba um numero e informe se ele é par ou impar.
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+void parOUimpar(int x){
+	if (x == 0){
+		cout << "nulo";
+	}
+	else if (x % 2 == 0){
+		cout << "O numero e par. ";
+	}else{
+		cout << "O numero e impar.";
+	}
+}
+
+int main(){
+	int x = 0;
+	cout << "Imprima o numero desejado: ";
+	cin >> x;
+	parOUimpar(x);
+	return 0;
+}
