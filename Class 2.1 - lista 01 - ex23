@@ -1,0 +1,40 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Escrever um algoritmo que lê:
+    - a percentagem do IPI a ser acrescido no valor das peças
+    - o código da peça 1, valor unitário da peça 1, quantidade de peças 1
+    - o código da peça 2, valor unitário da peça 2, quantidade de peças 2
+    
+    O algoritmo deve calcular o valor total a ser pago e apresentar o resultado.
+    
+    Fórmula: (valor_1 * quant_1 + valor_2 * quant_2) * (IPI/100 + 1)*/
+    
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+float calculo(float v1, float v2, float q1, float q2, float ipi){
+	float operacao = (v1 * q1 + v2 * q2) * ((ipi/100) + 1);
+	return operacao;
+}
+
+int main(){
+	float ipi = 0;
+	float valor_1, valor_2, quant_1, quant_2;
+	cout << "Valor do IPI: ";
+	cin >> ipi;
+	cout << "Valor unitario da peça 1: ";
+	cin >> valor_1;
+	cout << "Valor unitario da peça 2: ";
+	cin >> valor_2;
+	cout << "Quantidade de peças 1: ";
+	cin >> quant_1;
+	cout << "Quantidade de peças 2: ";
+	cin >> quant_2;
+	cout << "Valor total a ser pago: " << calculo(valor_1, valor_2, quant_1, quant_2, ipi);
+	
+	return 0;
+}
+    
