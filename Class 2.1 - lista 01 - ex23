@@ -1,0 +1,32 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+//Faça um módulo que verifica se o valor das variáveis a e b é par.
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+void verificacao(int a, int b){		
+	if (a % 2 == 0 and b % 2 == 0){
+		cout << "Variáveis A e B são pares.";
+	} else if(a % 2 != 0 and b % 2 != 0){
+		cout << "Variáveis A e B são ímpares.";
+	} else if (a % 2 != 0 and b % 2 == 0){
+		cout << "Variável A é ímpar e a variável B é par.";
+	} else if (a % 2 == 0 and b % 2 != 0){
+		cout << "Variável A é par e variável B é impar";
+	}
+	}
+
+
+int main(){
+	int a = 0, b = 0;	
+	cout << "Imprima o valor de A: ";
+	cin >> a;
+	cout << "Imprima o valor de B: ";
+	cin >> b;
+	verificacao(a, b);
+	return 0;
+}
