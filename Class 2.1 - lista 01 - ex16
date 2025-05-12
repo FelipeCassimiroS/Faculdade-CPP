@@ -1,0 +1,34 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+//Faça um programa que troca os valores de a e b, se a for menor que b.
+
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+void troca(float a, float b){
+	if (a < b){
+		float aux = a;
+		a = b;
+		b = aux;
+		cout << "Os valores foram trocados!" << endl;
+		cout << "Valor de A: " << a << endl;
+		cout << "Valor de B: " << b << endl;
+	}else{
+		cout << "Os valores se mantiveram!" << endl;
+	}
+	
+}
+
+int main(){
+	float a, b;
+	cout << "Imprima o valor de A: ";
+	cin >> a;
+	cout << "Imprima o valor de B: ";
+	cin >> b;
+	troca(a, b);
+	return 0;
+}
