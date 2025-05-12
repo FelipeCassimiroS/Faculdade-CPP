@@ -1,0 +1,40 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+//Faça um programa que receba 5 notas de 0 a 100 e informe quantas delas são superiores a 60.
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int calculo(int x1){
+	if (x1 > 60){
+		return 1;
+	}else{
+		return 0;
+	}
+}
+
+int main(){
+	int n1, n2, n3, n4, n5;
+	int aux = 0;
+	cout << "Informe a sua primeira nota: ";
+	cin >> n1;
+	aux = calculo(n1) + aux;
+	cout << "Informe a sua segunda nota: ";
+	cin >> n2;
+	aux = calculo(n2) + aux;
+	cout << "Informe a sua terceira nota: ";
+	cin >> n3;
+	aux = calculo(n3) + aux;
+	cout << "Informe a sua quarta nota: ";
+	cin >> n4;
+	aux = calculo(n4) + aux;
+	cout << "Informe a sua quinta nota: ";
+	cin >> n5;
+	aux = calculo(n5) + aux;
+	cout << aux << " Sao superiores" << endl;
+	
+	return 0;
+}
