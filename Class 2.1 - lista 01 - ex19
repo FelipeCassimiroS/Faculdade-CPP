@@ -1,0 +1,27 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+//Faça um programa que receba como entrada a idade de uma pessoa e informe se ela está apta ou não a tirar carteira de motorista.
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+void carteiraM(int x){
+	if (x >= 18){
+		cout << "Voce esta apto a tirar a sua carteira!";
+	}else{
+		cout << "Voce nao esta apto a tirar sua carteira!";
+	}
+}
+
+int main(){
+	int idade;
+	cout << "Informe sua idade: ";
+	cin >> idade;
+	carteiraM(idade);
+	
+	
+	return 0;
+}
