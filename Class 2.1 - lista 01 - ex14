@@ -1,0 +1,35 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Escrever um algoritmo que lê a hora de início de um jogo e a hora do final do jogo (considerando apenas horas inteiras) e calcula a duração do jogo em horas,
+ sabendo-se que o tempo máximo de duração do jogo é de 24 horas e que o jogo não pode iniciar em um dia e terminar no dia seguinte.*/
+
+ #include <iostream>
+ #include <math.h>
+ 
+ using namespace std;
+ 
+ 
+ void duracao(int horaF, int horaI){
+ 	int total = 0;
+	 if (horaF <= 24 && horaI < horaF){
+ 		total = horaF - horaI;
+ 		cout << "O jogo durou " << total << " horas.";
+	 }else{
+	 	cout << "Invalido";
+	 }
+ }
+ 
+ int main(){
+ 	
+ 	int horaI, horaF;
+	 cout << "Hora inicial: ";
+	 cin >> horaI;
+	 cout << "Hora final: ";
+	 cin >> horaF;
+	duracao(horaF, horaI);
+	  
+ 	
+ 	return 0;
+ }
