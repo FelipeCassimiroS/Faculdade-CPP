@@ -1,0 +1,28 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+//Faça um programa que receba como entrada um numero qualquer do usuário e informe se o número é positivo ou negativo.
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+void conversao(float x){
+	if (x == 0){
+		cout << "Nulo";
+	}else if (x < 0){
+		cout << "O numero e negativo";
+	}else {
+		cout << "O numero e positivo";
+	}
+}
+
+int main(){
+	float x;
+	cout << "Informe o valor de X: ";
+	cin >> x;
+	conversao(x);
+	
+	return 0;
+}
