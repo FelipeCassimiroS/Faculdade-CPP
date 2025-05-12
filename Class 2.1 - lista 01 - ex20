@@ -1,0 +1,28 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+//Melhore seu programa sobre carteira de motorista. Caso o usuario informe uma idade menor que 18, seu algoritmo deve calcular quantos anos faltam e informar a ele.
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+void carteiraM(int x){
+	if (x >= 18){
+		cout << "Voce esta apto a tirar a sua carteira!";
+	}else{
+		int conta = 18 -x;
+		cout << "Faltam " << conta << " anos para voce estar apto a tirar sua carteira!";
+	}
+}
+
+int main(){
+	int idade;
+	cout << "Informe sua idade: ";
+	cin >> idade;
+	carteiraM(idade);
+	
+	
+	return 0;
+}
