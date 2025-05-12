@@ -1,0 +1,40 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/* Imagine que você é um desenvolvedor trabalhando para o departamento responsável por monitorar a poluição ambiental. Esse departamento acompanha de perto o impacto de três grupos distintos de indústrias, conhecidos por serem significativos poluidores do ambiente. Para manter o equilíbrio, há um índice de poluição aceitável estabelecido, que varia de 0,05 até 0,25.
+    
+    Devido à importância de manter o ambiente seguro e saudável, o departamento estabeleceu um sistema de alertas baseado nos níveis de poluição detectados, funcionando da seguinte forma:
+    
+    - Se o índice de poluição atinge 0,3, é necessário emitir um alerta para que as indústrias do **primeiro grupo** suspendam imediatamente suas atividades, como uma medida preventiva para reduzir a poluição.
+    - Caso o índice de poluição alcance 0,4, as indústrias pertencentes tanto ao **primeiro quanto ao segundo grupo** devem receber um aviso para interromper suas operações, intensificando as ações para a diminuição dos níveis de poluição.
+    - Se o cenário se agravar e o índice de poluição chegar a 0,5, uma situação crítica é declarada, e todas as indústrias dos **três grupos** devem ser notificadas para parar suas atividades, visando a recuperação da qualidade ambiental.
+    
+    Sua tarefa é desenvolver um programa em C++ que possa ler o índice de poluição atual e, 
+	com base nesses critérios, determinar quais grupos de indústrias devem ser notificados para suspender suas atividades. 
+	Esse programa ajudará o departamento a agir rapidamente, garantindo a tomada de decisões eficazes para proteger o meio ambiente.*/
+	
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+void departamento(float p){
+	if (p < 0.3){
+		cout << "Segue o jogo";
+	} else if (p == 0.3){
+		cout << "Grupo 1 deve parar";
+	} else if (p >= 0.4 and p < 0.5){
+		cout << "Grupo 1 e 2 devem parar imediatamente";
+	} else if (p >= 0.5){
+		cout << "TODOS OS GRUPOS DEVEM PARAR!";
+	}
+}
+
+int main(){
+	float poluicao;
+	cout << "Indice de poluicao: ";
+	cin >> poluicao;
+	departamento(poluicao);
+	
+	return 0;
+}
