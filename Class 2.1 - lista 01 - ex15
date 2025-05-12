@@ -1,0 +1,26 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*O custo ao consumidor de um carro novo é a soma do custo de fábrica com a percentagem do distribuidor e dos impostos (aplicados ao custo de fábrica).
+Supondo que a percentagem do distribuidor seja de 28% e os impostos de 45%, escrever um algoritmo que leia o custo de fábrica de um carro e escreva o custo ao consumidor.*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+float custoC(float valorF){
+	float perc, imposto, total;
+	perc = valorF * 0.28;
+	imposto = valorF * 0.45;
+	total = valorF + perc + imposto;
+	return total;
+}
+
+int main(){
+	float valorF = 0;
+	cout << "Informe o valor do carro: " << endl;
+	cin >> valorF;
+	cout << "O custo total ao consumidor eh: " << custoC(valorF);
+	return 0;
+}
