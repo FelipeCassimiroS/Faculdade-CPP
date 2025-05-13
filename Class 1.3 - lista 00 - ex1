@@ -1,0 +1,28 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Construa um algoritmo que, tendo como dados de entrada dois pontos quaisquer no plano, P(x1, y1) e P(x2, y2), 
+escreva a distância entre eles. A fórmula que efetua tal cálculo é: */
+
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main(){
+	float x1, x2, y1, y2;
+	cout << "Digite o valor de x1: ";
+	cin >> x1;
+	cout << "Digite o valor de x2: ";
+	cin >> x2;
+	
+	cout << "Digite o valor de y1: ";
+	cin >> y1;
+	cout << "Digite o valor de y2: ";
+	cin >> y2;
+	
+	float distancia = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+	cout << "A distancia entre os dois pontos é: " << distancia << endl;
+	return 0;
+}
