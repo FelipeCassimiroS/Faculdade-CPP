@@ -12,11 +12,11 @@ void verificacao(int a, int b){
 	if (a % 2 == 0 and b % 2 == 0){
 		cout << "Variáveis A e B são pares.";
 	} else if(a % 2 != 0 and b % 2 != 0){
-		cout << "Variáveis A e B são ímpares.";
+		cout << "Variáveis A e B são não pares.";
 	} else if (a % 2 != 0 and b % 2 == 0){
-		cout << "Variável A é ímpar e a variável B é par.";
+		cout << "Variáveis A e B são não pares.";
 	} else if (a % 2 == 0 and b % 2 != 0){
-		cout << "Variável A é par e variável B é impar";
+		cout << "Variáveis A e B são não pares.";
 	}
 	}
 
