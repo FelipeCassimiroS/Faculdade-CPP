@@ -1,0 +1,49 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/* Escreva uma função que recebe os **ângulos** de um triângulo e checa se o mesmo é **válido** ou **não**. Retorne um **booleano** para informar essa validade. 
+Dica: a soma dos ângulos internos de um triângulo é igual a 180 graus.*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+bool checagem(float x1, float x2, float x3){
+	bool valido = true;
+		
+	if (x1 <= 0){
+		cout << "ângulo x1 é inválido" << endl;
+			 valido = false;
+	   return false;
+	} if (x2 <= 0){
+		cout << "ângulo x2 é inválido" << endl;
+			 valido = false;
+	   return false;
+	} if (x3 <= 0){
+		cout << "ângulo x3 é inválido" << endl;
+			 valido = false;
+	   return false;
+	}
+ 	if (valido and (x1 + x2 + x3 == 180)){
+		cout << "Válido" << endl;
+ 			 return true;
+	} else if (valido){
+		cout << "Inválido" << endl;
+			 return false;
+	}
+	return false;
+}
+
+int main(){
+	float x1 = 0, x2 = 0, x3 = 0;
+	cout << "Imprima o valor do ângulo x1: ";
+	cin >> x1;
+	cout << "Imprima o valor do ângulo x2: ";
+	cin >> x2;
+	cout << "Imprima o valor do ângulo x3: ";
+	cin >> x3;
+	checagem(x1, x2, x3);
+	
+	return 0;
+}
