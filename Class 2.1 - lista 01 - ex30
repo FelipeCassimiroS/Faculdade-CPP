@@ -1,0 +1,33 @@
+// continuar
+
+/* Elaborar um algoritmo que lê 2 valores a e b e os escreve com a mensagem: "São	múltiplos" ou "Não são múltiplos". */
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+void verificacao(int a, int b){
+	if (a > b){
+		int calculo = a % b;
+		if (calculo == 0){
+		cout << a << " e " << b << " sao multiplos";
+	} else {
+		cout << a << " e " << b << " nao sao multiplos";
+		} else if (b > a){
+		int calculo = b % a;
+		if (calculo == 0){
+		cout << b << " e " << a << " sao multiplos";
+			} else
+		}
+	}
+}
+
+int main(){
+	int a, b;
+	cout << "Imprima o valor de A: ";
+	cin >> a;
+	cout << "Imprima o valor de B: ";
+	cin >> b;
+	verificacao(a, b);
+	return 0;
+}
