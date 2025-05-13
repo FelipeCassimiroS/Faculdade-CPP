@@ -1,0 +1,27 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+//Faça um algoritmo que leia a idade de uma pessoa expressa em dias e mostre-a expressa em anos, meses e dias.
+
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+void conversao(int idade){
+	int anos, meses, resto;
+	anos = idade / 365;
+	resto = idade % 30;
+	meses = idade / 30;
+	cout << "Você tem " << anos << " anos, " << meses << " meses e " << resto << " dias." << endl;
+}
+
+int main(){
+	int idade;
+	cout << "Informe sua idade em dias: ";
+	cin >> idade;
+	conversao(idade);
+	
+	return 0;	
+}
