@@ -1,0 +1,29 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+
+//Faça um algoritmo que leia as 3 notas de um aluno e calcule a média final deste aluno.
+//Considerar que a média é ponderada e que o peso das notas é: 2, 3 e 5, respectivamente.
+
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+float mediaFinal(float n1, float n2, float n3){
+	float soma = (n1 * 2  + n2 * 3 + n3 * 5 ) / (2 + 3 + 5);
+	return soma;
+}
+
+int main(){
+	float n1, n2, n3;
+	cout << "Informe sua primeira nota: ";
+	cin >> n1;
+	cout << "Informe sua segunda nota: ";
+	cin >> n2;
+	cout << "Informe sua terceira nota: ";
+	cin >> n3;
+	cout << "Sua média final é: " << mediaFinal(n1,n2,n3);
+	return 0;
+}
