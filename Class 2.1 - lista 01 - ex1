@@ -1,0 +1,22 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+#include <iostream>
+using namespace std;
+
+int main(){
+	cout << "Olá" << endl;
+	cout << "mundo!" << endl;
+	cout << "" << endl;
+	cout << "-------------------------" << endl;
+	cout << "Idade: 18, peso: 50," << endl;
+	cout << "Altura: 1.78cm." << endl;
+	cout << "" << endl;
+	cout << "-------------------------" << endl;
+	cout << "Motor: 1.8," << endl;
+	cout << "eixos: 1.58," << endl;
+	cout << "Peso: 1540kg" << endl;
+	cout << "-------------------------" << endl;
+	return 0;
+}
