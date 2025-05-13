@@ -1,0 +1,33 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Escreva um algoritmo que leia três números inteiros e positivos (A, B, C) e calcule a seguinte
+expressão:*/
+
+#include <iostream>
+#include <math.h>
+
+using namespace std;
+
+int calculo(int a, int b, int c){
+	int r = pow(a + b, 2);
+	int s = pow(b + c, 2);
+	int equacao = (r + s) / 2;
+	return equacao; 
+}
+
+int main(){
+	int a, b, c;
+	cout << "----------------------" << endl;
+	cout << "Digite o valor de A: ";
+	cin >> a;
+	cout << "Digite o valor de B: ";
+	cin >> b;
+	cout << "Digite o valor de C: ";
+	cin >> c;
+	cout << "----------------------" << endl;
+	cout << "O resultado da equação (R + S) / 2 com estes valores informados é: " << calculo(a, b, c);
+
+}
+
