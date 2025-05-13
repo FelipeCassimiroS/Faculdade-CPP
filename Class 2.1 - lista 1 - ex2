@@ -1,0 +1,25 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+//Desenvolva uma função que some dois números	do tipo real. Posteriormente chame esta função dentro da função MAIN(), e imprima o resultado na tela com o comando cout
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+float calculo(float x1, float x2){
+	float soma = x1 + x2;
+	return soma;
+}
+
+
+int main(){
+	float x1, x2;
+	cout << "Primeiro número: " << endl;
+	cin >> x1;
+	cout << "Segundo número: ";
+	cin >> x2;
+	cout << "O resultado dos dois números somados é: " << calculo(x1, x2);
+	return 0;
+}
