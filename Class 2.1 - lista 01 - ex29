@@ -1,0 +1,31 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/* Elaborar um algoritmo que lê 3 valores a, b, c e os escreve. A seguir, encontre o maior dos 3 valores e o escreva com na tela "O maior dentre os três é: __ ".*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+void scanner(float a, float b, float c){
+	if (a >= b and a >= c){
+		cout << a << " eh maior.";
+	} else if (b >= a and b >= c){
+		cout << b << " eh maior.";
+	} else if (c >= a and c >= b){
+		cout << c << " eh maior.";
+	}
+}
+
+int main(){
+	float a, b, c;
+	cout << "Imprima o valor de A: ";
+	cin >> a;
+	cout << "Imprima o valor de B: ";
+	cin >> b;
+	cout << "Imprima o valor de C: ";
+	cin >> c;
+	scanner(a, b, c);
+	return 0;
+}
