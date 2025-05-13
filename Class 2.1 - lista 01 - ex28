@@ -1,0 +1,32 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Calcule a média aritmética das 3 nota	de um aluno e mostre, além do valor da média aritmética, uma mensagem de "Aprovado", caso a média seja igual ou superior a 6, ou a mensagem "reprovado", caso	contrário.*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+void media(int n1, int n2, int n3){
+	float soma = n1 + n2 + n3;
+	float mediaA = soma / 3;
+	
+	if (mediaA < 6){
+		cout << "Sua media foi: " << mediaA << " REPROVADO.";
+	} else{
+		cout << "Sua media foi: " << mediaA << " APROVADO!";
+	}	
+}
+
+int main(){
+	float n1, n2, n3;
+	cout << "Valor da sua primeira nota: ";
+	cin >> n1;
+	cout << "Valor da sua segunda nota: ";
+	cin >> n2;
+	cout << "Valor da sua terceira nota: ";
+	cin >> n3;
+	media(n1, n2, n3);
+	return 0;
+}
