@@ -1,4 +1,6 @@
-// continuar
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
 
 /* Elaborar um algoritmo que lê 2 valores a e b e os escreve com a mensagem: "São	múltiplos" ou "Não são múltiplos". */
 
@@ -7,19 +9,15 @@
 using namespace std;
 
 void verificacao(int a, int b){
-	if (a > b){
-		int calculo = a % b;
-		if (calculo == 0){
-		cout << a << " e " << b << " sao multiplos";
-	} else {
-		cout << a << " e " << b << " nao sao multiplos";
-		} else if (b > a){
-		int calculo = b % a;
-		if (calculo == 0){
-		cout << b << " e " << a << " sao multiplos";
-			} else
-		}
-	}
+	if (a > b and a % b == 0){
+	cout << a << " e " << b << " sao multiplos";	
+} else if (a > b and a % b != 0){
+	cout << a << " e " << b << " nao sao multiplos";
+} else if (b > a and b % a == 0){
+	cout << b << " e " << a << " sao multiplos";
+} else if (b < a and b % a != 0){
+	cout << b << " e " << a << " nao sao multiplos";
+}
 }
 
 int main(){
