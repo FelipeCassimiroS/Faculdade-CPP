@@ -1,0 +1,49 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Elabore um algoritmo que dada a idade de um nadador classifica-o em uma das seguintes categorias:
+Categoria
+
+Idade
+Infantil A
+5 -  7 anos
+Infantil B
+8 -  10 anos
+
+Juvenil A
+11 -  13 anos
+Juvenil B
+14 -  17 anos
+
+Adulto
+18 ou mais*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+void verificacao(int idade){
+	if (idade < 5){
+		cout << "Nao pode competir";
+	} else if (idade >= 5 and idade <= 7){
+		cout << "Idade: " << idade << " - Categoria: Infantil A";
+	} else if ( idade >= 8 and idade <= 10){
+		cout << "Idade: " << idade << " - Categoria: Infantil B";
+	} else if ( idade >= 11 and idade <= 13){
+		cout << "Idade: " << idade << " - Categoria: Juvenil A";
+	} else if ( idade >= 14 and idade <= 17){
+		cout << "Idade: " << idade << " - Categoria: Juvenil B";
+	} else if (idade >= 18){
+		cout << "Idade: " << idade << " - Categoria: Adulto";
+	}
+}
+
+int main(){
+	int idade = 0;
+	cout << "Informe sua idade: ";
+	cin >> idade;
+	verificacao(idade);	
+	
+	return 0;
+}
