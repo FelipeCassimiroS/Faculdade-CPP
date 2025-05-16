@@ -1,0 +1,60 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/* Escreva uma função que retorna as raízes de uma equação do segundo grau, caso elas existam. 
+Caso contrário informe ao usuário. Caso você não lembre pesquise as fórmulas, afinal programar é ensinar o computador a fazer algo que você sabe	:) 
+
+				---------------------------------------- 
+					  Calcula raizes da equacao 2 grau 
+			          F(x) = a.x² + b.x + c
+				----------------------------------------
+Informe a:  1
+Informe b: -5
+Informe c:  6
+
+Delta: 1
+Raizes da equacao: x1 = 2 e x2 = 3*/
+
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int delta(int a, int b, int c, int x){
+	int operacao = 0;
+	operacao = pow(b, 2) - (4 * a * c);
+	
+	return operacao;
+}
+
+int raizP( int a, int b, int c, int x){
+	int funcao = 0;
+	funcao = (-b + delta(a, b, c, x)) / (2 * a);
+	
+	return funcao;
+}
+
+int raizN( int a, int b, int c, int x){
+	int funcao = 0;
+	funcao = (-b - delta(a, b, c, x)) / (2 * a);
+	
+	return funcao;
+}
+
+
+int main(){
+	int a, b, c, x;
+	cout << "Imprima o valor de A: ";
+	cin >> a;
+	cout << "Imprima o valor de B: ";
+	cin >> b;
+	cout << "Imprima o valor de C: ";
+	cin >> c;
+	cout << "X1 = " << raizP(a, b, c, x);
+	cout << endl;
+	cout << "X2 = " << raizN(a, b, c, x);
+	cout << endl;
+	cout << "Delta = " << delta(a, b, c, x);
+	return 0;
+}
