@@ -1,0 +1,60 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/* Escreva um algoritmo que leia o código de um aluno e suas três notas. 
+Calcule a média ponderada do aluno, considerando que o peso para a maior nota seja 4 e	para as duas restantes, 3.
+Mostre o código do aluno, suas três notas, a média calculada e uma mensagem "APROVADO" se a média for maior ou igual a 50 
+e "REPROVADO" se a média for menor que 50. */
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+float calcMedia(float n1, float n2, float n3){
+	float mediap = 0;
+	if (n1 >= n2 and n1 >= n3){ 
+	mediap = ((n1 * 4) + (n2 * 3) + (n3 * 3)) / (4 + 3 + 3);	
+				   
+	} else if ( n2 >= n1 and n2 >= n3){		
+	mediap = ((n1 * 3) + (n2 * 4) + (n3 * 3)) / (4 + 3 + 3);	
+		   		   
+	} else if ( n3 >= n1 and n3 >= n2){
+	mediap = ((n1 * 3) + (n2 * 3) + (n3 * 4)) / (4 + 3 + 3);
+		   	
+	}
+	return mediap;
+}
+
+int main(){
+	float n1, n2, n3, matricula, media;
+	cout << "********************************" << endl;
+	cout << "      SITUACAO DO ALUNO\n" << endl;
+	cout << "********************************\n" << endl;
+	cout << "Para comecar, informe seu codigo de matricula: ";
+	cin >> matricula;
+	cout << "\nInforme sua primeira nota: ";
+	cin >> n1;
+	cout << "------------------------------------\n" << endl;
+	cout << "\nInforme sua segunda nota: ";
+	cin >> n2;
+	cout << "------------------------------------\n" << endl;
+	cout << "\nInforme sua terceira nota: ";
+	cin >> n3;
+	cout << "------------------------------------\n" << endl;
+	media = calcMedia(n1, n2, n3);
+	if (media >= 50){
+		cout << "\nSua média foi " << media << "!\n" << endl;
+	 	cout << "********************************" << endl;
+	 	cout << "\n         APROVADO\n" << endl;
+		cout << "\nCodigo de matricula: " << matricula << endl;	 
+ 	 	cout << "\n********************************\n" << endl;	 
+	} else {
+		cout << "\nSua média foi " << media << "!\n" << endl;
+	 	cout << "\n********************************" << endl;
+	 	cout << "\n         REPROVADO \n               " << endl;
+	 	cout << "\nCodigo de matricula: " << matricula << endl;
+ 	 	cout << "\n********************************\n" << endl;
+	}
+	return 0;
+}
