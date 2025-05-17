@@ -2,10 +2,6 @@
 //Instituição: IF Sudeste MG - RP
 //Período: Primeiro
 
-//Aluno: Felipe Cassimiro Salomão
-//Instituição: IF Sudeste MG - RP
-//Período: Primeiro
-
 /* Imagine que você é um desenvolvedor trabalhando para o departamento responsável por monitorar a poluição ambiental. Esse departamento acompanha de perto o impacto de três grupos distintos de indústrias, conhecidos por serem significativos poluidores do ambiente. Para manter o equilíbrio, há um índice de poluição aceitável estabelecido, que varia de 0,05 até 0,25.
     
     Devido à importância de manter o ambiente seguro e saudável, o departamento estabeleceu um sistema de alertas baseado nos níveis de poluição detectados, funcionando da seguinte forma:
