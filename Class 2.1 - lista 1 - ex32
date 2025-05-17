@@ -21,40 +21,37 @@ Raizes da equacao: x1 = 2 e x2 = 3*/
 #include <math.h>
 using namespace std;
 
-int delta(int a, int b, int c, int x){
-	int operacao = 0;
-	operacao = pow(b, 2) - (4 * a * c);
+void calcularRaizes(int a, int b, int c){
+	double delta = 0;
+	delta = pow(b, 2) - (4 * a * c);
+	cout << "Delta: " << delta << endl;
 	
-	return operacao;
-}
-
-int raizP( int a, int b, int c, int x){
-	int funcao = 0;
-	funcao = (-b + delta(a, b, c, x)) / (2 * a);
-	
-	return funcao;
-}
-
-int raizN( int a, int b, int c, int x){
-	int funcao = 0;
-	funcao = (-b - delta(a, b, c, x)) / (2 * a);
-	
-	return funcao;
+	if (delta < 0){		
+	cout << "Nao existem raizes reais" << endl;
+	} else if (delta == 0){
+		double x = - b / (2.0 * a);
+		cout << "Raiz unica. X = " << x << endl;
+		} else {			 		   
+		double x2 = (-b + sqrt(delta)) / 2 * a;
+		double x1 = (-b - sqrt(delta)) / 2 * a;	
+		cout << "x1 = " << x1 << endl;
+	 	cout << "x2 = " << x2 << endl; 	 
+	}
 }
 
 
 int main(){
-	int a, b, c, x;
+	int a, b, c;
 	cout << "Imprima o valor de A: ";
 	cin >> a;
 	cout << "Imprima o valor de B: ";
 	cin >> b;
 	cout << "Imprima o valor de C: ";
 	cin >> c;
-	cout << "X1 = " << raizP(a, b, c, x);
-	cout << endl;
-	cout << "X2 = " << raizN(a, b, c, x);
-	cout << endl;
-	cout << "Delta = " << delta(a, b, c, x);
+	if (a == 0){
+	cout << "Essa nao é uma equacao do segundo grau (A nao pode ser 0)." << endl;
+	} else {
+	calcularRaizes(a, b, c);
+	}
 	return 0;
 }
