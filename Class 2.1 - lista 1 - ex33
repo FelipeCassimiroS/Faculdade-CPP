@@ -1,0 +1,56 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/* 1. Tendo como dados de entrada a **altura** e	o **sexo** de uma pessoa (M masculino e F feminino),
+construa um	algoritmo que calcule seu peso ideal, utilizando as seguintes	fórmulas:
+
+    - para homens: $(72.7 * Altura)	- 58$
+    - para mulheres: $(62.1 * Altura)	- 44.7 */
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main(){
+	int opcao = 0;
+	float altura = 0;
+	cout << "*********************************************" << endl;
+	cout << "          SAIBA SEU PESO IDEAL\n" << endl;
+	cout << "*********************************************\n" << endl;
+	cout << "Informe seu sexo\n";
+	cout << "-----------------------------------------------" << endl;
+	cout << "1 - Masculino\n";
+	cout << "2 - Feminino\n";
+	cout << "\n----------------------------------------------" << endl;
+	cout << "Escolha uma opcao: ";
+	cin >> opcao;	
+ 	cout << "\n---------------------------------------------\n" << endl;
+ 	
+ 	float pesoM;
+ 	float pesoF;
+	switch (opcao){
+		case 1:
+ 			 cout << "Sua altura: ";
+ 			 cin >> altura;
+ 	 	 	 pesoM = (72.7 * altura) - 58;
+	      	 cout << "\n---------------------------------------------" << endl;
+			 cout << "Seu peso ideal é: " << pesoM << "kg\n";
+			 cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;	  	  
+			 break; 
+		
+		case 2:
+ 			 cout << "Sua altura: ";
+ 			 cin >> altura;
+ 	 	 	 pesoF = (62.1 * altura) - 44.7;
+ 			 cout << "\n---------------------------------------------" << endl;	      
+	 		 cout << "Seu peso ideal é: " << pesoF << "kg\n";
+  	  		 cout << "\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+  			 break;
+  			 	   	  
+		default: 
+		cout << "Opcao invalida!";
+		break;	  			  
+	}	
+	return 0;
+}    
