@@ -1,0 +1,39 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Elabore uma função sem retorno que receba como parâmetro um inteiro representando um dia da semana e imprima o seu respectivo nome por extenso.
+Considere que o número 1 representa o domingo; 2 a segunda-feira, etc. Caso o número não corresponda a um dia da semana, a função deve exibir a mensagem “Dia da semana inválido”.*/
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+void diaDaSemana(int dia){
+	if (dia == 1){
+		cout << "Domingo." << endl;
+	} else if (dia == 2){
+		cout << "Segunda-feira." << endl;
+	} else if (dia == 3){
+		cout << "Terça-feira." << endl;
+	} else if (dia == 4){
+		cout << "Quarta-feira." << endl;
+	} else if (dia == 5){
+		cout << "Quinta-feira." << endl;
+	} else if (dia == 6){
+		cout << "Sexta-feira." << endl;
+	} else if (dia == 7){
+		cout << "Sábado." << endl;
+	} else {
+		cout << "Dia da semana inválido." << endl;
+	}
+}
+
+int main(){
+	int dia = 0;
+	cout << "Digite um dia da semana (1 a 7): ";
+	cin >> dia;
+	diaDaSemana(dia);
+	
+	return 0;
+}
