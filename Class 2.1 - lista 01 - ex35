@@ -1,0 +1,87 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/* 3. Um professor te contratou para fazer um programa para fazer a média de três notas.
+ Porém ele tem mais de uma turma e cada turma ele aplica uma média diferente.
+ Assim, alem de ler as notas seu programa deve deixar o usuário escolher qual	tipo de média ele deseja calcular. 
+ Os três tipos de médias desejado pelo professor são:
+    1. Aritmética
+    2. Ponderada (3,3,4)
+    3. Harmônica */
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+float mediaA(float n1, float n2, float n3){
+	float soma, arit;
+	soma = n1 + n2 + n3;
+	arit = soma / 3;
+	return arit;
+}
+
+float mediaP(float n1, float n2, float n3){
+	float ponderada = ((n1 * 3) + (n2 * 3) + (n3 * 4)) / (4 + 3 + 3);
+	return ponderada;
+}
+
+float mediaH(float n1, float n2, float n3){
+	if (n1 == 0 or n2 == 0 or n3 == 0){
+		cout << "Nao da para calcular media harmonica com media 0" << endl;
+	} else {
+	return 3 / ((1 / n1 ) + (1 / n2) + (1 / n3));
+	}
+}
+
+void turmas(float n1, float n2, float n3){
+	int opcao = 0;
+	cout << "\n********************************" << endl;
+	cout << "         ~ TURMAS ~" << endl;
+	cout << "\n----------------------------------" << endl;
+	cout << "1 - Turma aritmetica" << endl;
+	cout << "2 - Turma ponderada" << endl;
+	cout << "3 - Turma harmonica" << endl;
+	cout << "--------------------------------" << endl;
+	cout << "Escolha a turma: ";
+	cin >> opcao;
+	
+	switch(opcao){
+		case 1:
+ 		cout << "\nMedia aritmetica: " << mediaA(n1, n2, n3);		       	
+
+		break;
+		
+		case 2:
+		cout << "\nMedia ponderada: " << mediaP(n1, n2, n3);
+		break;
+		
+		case 3:
+		cout << "\nMedia harmonica: " << mediaH(n1, n2, n3);
+			 
+		break;
+		
+		default:
+		cout << "\n     OPCAO INVALIDA" << endl;
+		
+		break;
+	}				 		
+}
+
+int main(){
+	float n1, n2, n3;
+	cout << "********************************\n" << endl;
+	cout << "      MEDIA DE TRES NOTAS\n" << endl;
+	cout << "********************************" << endl;
+	cout << "\n ~x Imprima a nota do aluno abaixo x~ " << endl;
+	cout << "-----------------------------------------" << endl;
+	cout << "Primeira nota: ";
+	cin >> n1;
+	cout << "Segunda nota: ";
+	cin >> n2;
+	cout << "Terceira nota: ";
+	cin >> n3;
+	
+	turmas(n1, n2, n3);
+	return 0;
+} 
