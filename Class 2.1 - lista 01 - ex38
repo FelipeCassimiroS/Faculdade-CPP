@@ -22,6 +22,16 @@ Considere que a cada execução somente será calculado um item. */
 using namespace std;
 
 void cardapio(){
+	cout << "\n---------------------------------" << endl;
+	cout << "\n         CARDAPIO\n" << endl;
+	cout << "---------------------------------\n" << endl;
+	cout << "Cod.100 - Cachorro quente" << endl;
+	cout << "Cod.101 - Bauru simples" << endl;
+	cout << "Cod.102 - Bauru com ovo" << endl;
+	cout << "Cod.103 - Hamburguer" << endl;
+	cout << "Cod.104 - Cheeseburguer" << endl;
+	cout << "Cod.105 - Refrigerante" << endl;
+	cout << "\n---------------------------------\n" << endl;
 	int codigo = 0;
 	float preco, total, quantidade;
 	cout << "Digite o codigo do produto desejado: ";
@@ -37,7 +47,8 @@ void cardapio(){
 		 	 total = quantidade * preco;
 		 	 cout << "\n*********************************" << endl;	      
      		 cout << "\nValor a pagar: " << total << endl;
-		  	 cout << "\n*********************************" << endl;   	   			   	  			 	   
+     		 cout << "\n.....Volte sempre!....." << endl;	   
+		  	 cout << "*********************************" << endl;   	   			   	  			 	   
 		 	   
 		break;
 		
@@ -49,7 +60,8 @@ void cardapio(){
 		 	 total = quantidade * preco;
 			 cout << "\n*********************************" << endl;	      
      		 cout << "\nValor a pagar: " << total << endl;
-			 cout << "\n*********************************" << endl;   	   		 
+     		 cout << "\n.....Volte sempre!....." << endl;	   
+			 cout << "*********************************" << endl;   	   		 
 		
 		break;
 		
@@ -61,7 +73,8 @@ void cardapio(){
 		 	 total = quantidade * preco;
 			 cout << "\n*********************************" << endl;	      
      		 cout << "\nValor a pagar: " << total << endl;
-			 cout << "\n*********************************" << endl;   	
+     		 cout << "\n.....Volte sempre!....." << endl;	   
+			 cout << "*********************************" << endl;   	
 			 
 		break;
 		
@@ -73,7 +86,8 @@ void cardapio(){
 		 	 total = quantidade * preco;
      		 cout << "\n*********************************" << endl;	      
      		 cout << "\nValor a pagar: " << total << endl;
-			 cout << "\n*********************************" << endl;   	   	
+     		 cout << "\n.....Volte sempre!....." << endl;	   
+			 cout << "*********************************" << endl;   	   	
 			 
 		break;
 		 	  
@@ -85,7 +99,8 @@ void cardapio(){
 		 	 total = quantidade * preco;
      		 cout << "\n*********************************" << endl;	      
      		 cout << "\nValor a pagar: " << total << endl;
-			 cout << "\n*********************************" << endl;   	
+     		 cout << "\n.....Volte sempre!....." << endl;	   
+			 cout << "*********************************" << endl;   	
 			 
 		break;
 		
@@ -97,7 +112,8 @@ void cardapio(){
 		 	 total = quantidade * preco;
      		 cout << "\n*********************************" << endl;	      
      		 cout << "\nValor a pagar: " << total << endl;
-			 cout << "\n*********************************" << endl;   	   	
+ 	   		 cout << "\n.....Volte sempre!....." << endl;
+			 cout << "*********************************" << endl;   	   	
 			 
 		break; 
 		
@@ -110,17 +126,39 @@ void cardapio(){
 	}
 }
 
+void whatsapp(){
+	cout << "\nTel: 4002-8922" << endl;
+	cout << ".....Volte sempre!....." << endl;
+}
+
+
 int main(){
-	cout << "---------------------------------" << endl;
-	cout << "\n         CARDAPIO\n" << endl;
-	cout << "---------------------------------\n" << endl;
-	cout << "Cod.100 - Cachorro quente" << endl;
-	cout << "Cod.101 - Bauru simples" << endl;
-	cout << "Cod.102 - Bauru com ovo" << endl;
-	cout << "Cod.103 - Hamburguer" << endl;
-	cout << "Cod.104 - Cheeseburguer" << endl;
-	cout << "Cod.105 - Refrigerante" << endl;
-	cout << "\n---------------------------------\n" << endl;
-	cardapio();
+	cout << "\n**************************************************\n" << endl;
+	cout << "  SEJA BEM VINDO(A) A LANCHONETE HANS CHUCRUTE!  " << endl;
+	cout << "\n**************************************************\n" << endl;
+	cout << "1 - Cardapio" << endl;
+	cout << "2 - Whatsapp" << endl;
+	cout << "0 - Sair\n" << endl;
+	int opcao = 0;
+	cout << "Prima a opcao que desejar: ";
+	cin >> opcao;
+	
+	switch (opcao){
+	case 1:
+		cardapio();
+ 	  	break;
+ 	   	 
+	case 2:			 	
+		whatsapp();
+ 	 	break;
+  	 
+	case 0:
+		cout << "Volte Sempre!"	<< endl;
+	   	break;
+
+   	default:   		    	
+ 	   	cout << "Codigo invalido" << endl;	  	  
+	}
+	
 	return 0;
 }
