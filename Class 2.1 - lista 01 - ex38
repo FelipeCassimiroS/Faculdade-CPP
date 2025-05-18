@@ -1,0 +1,126 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/* 6. O cardápio de uma lanchonete é o seguinte:
+    
+    
+    | **Especificação** | **Código** | **Preço** |
+    | --- | --- | --- |
+    | Cachorro quente | 100 | 2,20 |
+    | Bauru simples | 101 | 3,30 |
+    | Bauru com ovo | 102 | 3,50 |
+    | Hambúrguer | 103 | 5,20 |
+    | Cheeseburguer | 104 | 7,30 |
+    | Refrigerante | 105 | 2,00 |
+    
+Escrever um algoritmo que leia o código do item pedido, a quantidade e calcule o valor a ser pago por aquele lanche.
+Considere que a cada execução somente será calculado um item. */
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+void cardapio(){
+	int codigo = 0;
+	float preco, total, quantidade;
+	cout << "Digite o codigo do produto desejado: ";
+	cin >> codigo;
+	cout << "\n---------------------------------\n" << endl;
+	switch (codigo){
+		
+		case 100:	 	
+			 preco = 2.20;	 	
+		 	 cout << "Cachorro quente - 2.20\n" << endl;
+		 	 cout << "Quantidade: ";
+		 	 cin >> quantidade;
+		 	 total = quantidade * preco;
+		 	 cout << "\n*********************************" << endl;	      
+     		 cout << "\nValor a pagar: " << total << endl;
+		  	 cout << "\n*********************************" << endl;   	   			   	  			 	   
+		 	   
+		break;
+		
+		case 101:  	
+			 preco = 3.30;
+			 cout << "Bauru simples - 3.30\n" << endl;	 	
+		 	 cout << "Quantidade: ";
+		 	 cin >> quantidade;
+		 	 total = quantidade * preco;
+			 cout << "\n*********************************" << endl;	      
+     		 cout << "\nValor a pagar: " << total << endl;
+			 cout << "\n*********************************" << endl;   	   		 
+		
+		break;
+		
+		case 102:	 	
+			 preco = 3.50;
+			 cout << "Bauru com ovo - 3.50\n" << endl;
+ 	  		 cout << "Quantidade: ";
+		 	 cin >> quantidade;
+		 	 total = quantidade * preco;
+			 cout << "\n*********************************" << endl;	      
+     		 cout << "\nValor a pagar: " << total << endl;
+			 cout << "\n*********************************" << endl;   	
+			 
+		break;
+		
+		case 103:	 	
+			 preco = 5.20;	
+			 cout << "Hamburguer - 5.20\n" << endl;
+ 	  		 cout << "Quantidade: ";
+		 	 cin >> quantidade;
+		 	 total = quantidade * preco;
+     		 cout << "\n*********************************" << endl;	      
+     		 cout << "\nValor a pagar: " << total << endl;
+			 cout << "\n*********************************" << endl;   	   	
+			 
+		break;
+		 	  
+		case 104:	 	
+			 preco = 7.30;	 	
+			 cout << "Cheeseburguer - 7.30\n" << endl;
+ 	  		 cout << "Quantidade: ";
+		 	 cin >> quantidade;
+		 	 total = quantidade * preco;
+     		 cout << "\n*********************************" << endl;	      
+     		 cout << "\nValor a pagar: " << total << endl;
+			 cout << "\n*********************************" << endl;   	
+			 
+		break;
+		
+		case 105:	 	
+			 preco = 2.00;	
+			 cout << "Refrigerante - 2.00\n" << endl;
+ 	  		 cout << "Quantidade: ";
+		 	 cin >> quantidade;
+		 	 total = quantidade * preco;
+     		 cout << "\n*********************************" << endl;	      
+     		 cout << "\nValor a pagar: " << total << endl;
+			 cout << "\n*********************************" << endl;   	   	
+			 
+		break; 
+		
+		default:
+			cout << "\n*********************************" << endl;			
+		 	cout << "\n        ~Codigo invalido~       " << endl;
+	  		cout << "\n*********************************" << endl;
+
+	 	 break;	 
+	}
+}
+
+int main(){
+	cout << "---------------------------------" << endl;
+	cout << "\n         CARDAPIO\n" << endl;
+	cout << "---------------------------------\n" << endl;
+	cout << "Cod.100 - Cachorro quente" << endl;
+	cout << "Cod.101 - Bauru simples" << endl;
+	cout << "Cod.102 - Bauru com ovo" << endl;
+	cout << "Cod.103 - Hamburguer" << endl;
+	cout << "Cod.104 - Cheeseburguer" << endl;
+	cout << "Cod.105 - Refrigerante" << endl;
+	cout << "\n---------------------------------\n" << endl;
+	cardapio();
+	return 0;
+}
