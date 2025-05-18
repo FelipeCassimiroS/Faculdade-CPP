@@ -1,0 +1,54 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Brutus e Olívia foram ao médico, que disse a	eles que ambos estão fora do peso ideal. 
+Ambos discordaram veementemente da afirmação do médico. 
+Para provar que estava certo, o médico mostrou o Índice de Massa Corporal (IMC) de ambos, 
+considerando que Brutus tem 1.84 m e pesa 122 kg e Olívia tem 1.76 m e pesa 45 kg. 
+Implemente um programa para mostrar o IMC de Brutus e Olívia e qual é a quantidade mínima de quilos Brutus e Olívia devem 
+perder/ganhar para atingirem um peso saudável segundo a classificação do IMC.
+Cálculo do IMC: peso/pow(altura,2)*/
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+void calculadoraIMC(float pesoAtual, float altura){
+	float imc = pesoAtual / pow(altura, 2); 
+	float pesoMaximoS = 24.9 * pow(altura, 2);
+	float pesoMinimoS = 18.5 * pow(altura, 2); 
+	float pesoPerder = pesoAtual - pesoMaximoS;
+	float pesoGanhar = pesoMinimoS - pesoAtual;
+	if(imc < 16){ 
+		cout << "Magreza grave - " << " Ganhe " << pesoGanhar << " kgs para ficar saudavel";
+	} else if (imc >= 16 and imc < 17){
+		cout << "Magreza moderada - " << " Ganhe " << pesoGanhar << " kgs para ficar saudavel";
+	} else if (imc >= 17 and imc < 18.5){
+		cout << "Magreza leve - " << " Ganhe " << pesoGanhar << " kgs para ficar saudavel";
+	} else if (imc >= 18.5 and imc < 25){
+		cout << "Saudavel";
+	} else if (imc >= 25 and imc < 30){
+		cout << "Sobrepeso - " << " Perca " << pesoPerder << " kgs para ficar saudavel";
+	} else if (imc >= 30 and imc < 35){
+		cout << "Obesidade grau I - " << " Perca " << pesoPerder << " kgs para ficar saudavel";
+	} else if (imc >= 35 and imc < 40){
+		cout << "Obesidade grau II - " << " Perca " << pesoPerder << " kgs para ficar saudavel";
+	} else if (imc >= 40){
+		cout << "Obesidade grau III - " << " Perca " << pesoPerder << " kgs para ficar saudavel";
+	}
+}
+
+int main(){
+	float peso, altura;
+	cout << "***************************" << endl;
+	cout << "      CALCULADORA IMC" << endl;
+	cout << "***************************" << endl;
+	cout << "Seu peso: ";
+	cin >> peso;
+	cout << "Sua altura: ";
+	cin >> altura;
+	cout << "---------------------------------" << endl;
+	calculadoraIMC(peso, altura);
+	return 0;
+}
