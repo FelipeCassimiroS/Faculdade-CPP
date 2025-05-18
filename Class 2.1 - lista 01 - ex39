@@ -1,0 +1,30 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*  Escreva uma função sem retorno que receba por parâmetro um inteiro referente ao mês e que imprima a estação (verão, outono, inverno, primavera) do ano correspondente. */
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+void estacao(int mes){
+	if (mes == 12 or mes >= 1 and mes < 3){
+		cout << "Verão!" << endl;
+	} else if (mes >= 3 and mes < 6){
+		cout << "Outono!" << endl;
+	} else if( mes >= 6 and mes < 9){
+		cout << "Inverno!" << endl;
+	} else if (mes >= 9 and mes <= 11){
+		cout << "Primavera!" << endl;
+	}
+}
+
+int main(){
+	int mes = 0;
+	cout << "Digite um mês (em número): ";
+	cin >> mes;
+	estacao(mes);	
+	
+	return 0;
+}
