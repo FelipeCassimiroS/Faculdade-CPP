@@ -136,6 +136,14 @@ int main(){
 
 
 -----------------------------------
+/*Questão 3 (8 pontos)
+Desenvolver um algoritmo que faça a leitura de 6 números reais no main e, numa sub-rotina a parte,
+imprima se os três primeiros valores são iguais ou se os três últimos valores são iguais, em caso afirmativo,
+retorne o valor 15. Caso contrário, ou seja, se nenhum dos dois casos acontecerem, imprimir um alerta ao
+usuário somente se a soma dos seis números resultar num valor que é múltiplo do último valor digitado. A
+sub-rotina deve sempre retornar o valor desse somatório. No main, se o retorno for 15, imprimir Ótimo, se
+for diferente de 15, imprimir Excelente.*/
+
 
 
 #include<iostream>
