@@ -1,0 +1,62 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Um banco concederá um crédito especial aos seus clientes, variável com o saldo médio no último ano. 
+Faça um algoritmo que leia o saldo médio de um cliente e calcule o valor do	crédito de acordo com a tabela abaixo. 
+Mostre uma mensagem informando o saldo médio e o valor do crédito. (use o comando case e não faça repetições)
+Saldo médio                Percentual
+de 0 a 200                nenhum crédito
+de 201 a 400                20% do valor do saldo médio
+de 401 a 600                30% do valor do saldo médio
+acima de 601               40% do valor do saldo médio*/
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+void credito(float saldoM){
+	cout << "\n*********************************************" << endl;
+	float calculo = 0;
+	int credito = 0;
+	if (saldoM >= 0 and saldoM < 201)	
+		credito = 1;
+		else if (saldoM >= 201 and saldoM < 401)
+		credito = 2;
+		else if (saldoM >= 401 and saldoM < 601)
+		credito = 3;
+		else
+		credito = 4;
+		
+		switch(credito){
+	
+		case 1:
+ 		cout << "Nenhum crédito adicionado!" << endl;
+	 	break;
+		
+		case 2:
+		 calculo = saldoM * 0.20;
+		 cout << "Crédito de R$" << calculo << "!" << endl;
+		 break;
+		 
+		 case 3:
+	  	 calculo = saldoM * 0.30;
+		 cout << "Crédito de R$" << calculo << "!" << endl;
+		 break;
+		 
+		 case 4:
+		 calculo = saldoM * 0.40;
+		 cout << "Crédito de R$" << calculo << "!" << endl;
+		 break; 
+		
+		}
+	}
+
+int main(){
+	float saldoMedio;
+	cout << "Saldo médio do ano passado: ";
+	cin >> saldoMedio;	
+	credito(saldoMedio);
+	
+	return 0;
+}
