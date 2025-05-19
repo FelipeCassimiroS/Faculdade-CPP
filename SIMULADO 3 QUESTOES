@@ -1,0 +1,178 @@
+/*Utilizando a estrutura de alternativa múltipla escolha (obrigatório o uso do ‘switch(codigo){case’… ),
+desenvolver um algoritmo para calcular e imprimir o novo preço dos carros de determinada marca. O
+algoritmo deve solicitar o código do carro e o preço antigo. Código 'S' para sedan, 'C' para conversível e 'P'
+para popular. Qualquer código diferente desses será tratado da mesma maneira no programa. Em uma subrotina separada, explique ao usuário o que os códigos significam, chame-a no main. O cálculo do novo preço
+será feito em outra sub-rotina do seguinte modo:
+ Sedan terá aumento de 11% se o preço for menor que R$ 150.000 e 7% caso contrário.
+ Conversível terá um aumento de 9% se o preço for menor que R$ 100.000.
+ Popular terá um aumento de 4%.
+ Qualquer outro código terá um aumento de 5%.
+O valor do novo preço deve ser obrigatoriamente impresso no método main*/
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+void menu(){
+	cout << "Codigos        Carro" << endl;
+	cout << "S              Sedan" << endl;
+	cout << "C              Conversivel" << endl;
+	cout << "P              Popular\n" << endl;
+}
+
+float carros(){
+	float valorA, valorN;
+	cout << "\nCodigo do carro: ";
+	char modelo;
+	cin >> modelo;
+	
+	switch(modelo){
+		case 'S':
+			cout << "\nTipo - Sedan\n" << endl;
+			cout << "Valor antigo do carro: ";
+			cin >> valorA;
+			if (valorA < 150000){
+				valorN = valorA + (valorA * 0.11);
+				return valorN;
+			} else {
+				valorN = valorA + (valorA * 0.07);
+				return valorN;
+			}
+	break;
+		
+		case 'C':
+			cout << "\nTipo - Conversivel\n" << endl;
+			cout << "Valor antigo do carro: ";
+			cin >> valorA;
+			if (valorA < 100000){
+				valorN = valorA + (valorA * 0.09);
+				return valorN;
+			} else {
+				return valorN;
+			}
+	break;
+	
+		case 'P':
+			cout << "\nPopular\n" << endl;
+			cout << "Valor antigo do carro: ";
+			cin >> valorA;
+			valorN = valorA + (valorA * 0.04);
+			return valorN;
+	break;
+	
+	default:
+		cout << "\nCodigo invalido! Tente novamente." << endl;		
+	}
+	
+}
+
+int main(){
+	cout << "-Conversao de valores-\n";
+	menu();
+	float valorN = carros();
+	cout << "Valor novo: " << valorN << endl;
+	return 0;
+}
+
+---------------------------------
+
+/* Questão 2 (9 pontos)
+Você é programador de uma montadora de peças que costuma vender conjuntamente duas peças, mas em
+quantidades diferentes. Escreva um algoritmo que solicite ao usuário todas as informações a seguir:
+ O valor unitário da peça X, a quantidade de peças X, o IPI da peça X;
+ O valor unitário da peça Y, a quantidade de peças Y, o IPI da peça Y; 
+O IPI é um imposto dado em porcentagem. Ou seja, o valor da peça aumentará de acordo com a
+porcentagem do imposto. O algoritmo deve calcular o valor total a ser pago numa sub-rotina
+separada, levando em consideração a quantidade de peças X que foram compradas, bem como o
+total de peças Y que foram compradas, lembrando que o valor de todas as peças, individualmente,
+são acrescidas do respectivo IPI. Imprima no main o valor total pago. Se o valor total estiver
+entre 5000 e 10000, imprima no main a mensagem: lucro. Se for maior que 10000, imprima no
+main a mensagem: muito lucro */
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+float valorT(float px, float qx, float ipix, float py, float qy, float ipiy){
+	float valorAP = 0;
+	float calculoipix = 0;
+	float calculoipiy = 0;
+	calculoipix = (((ipix / 100) * px) + px);
+	calculoipiy = (((ipiy / 100) * py) + py);
+	valorAP = ((calculoipix * qx) + (calculoipiy * qy));
+	return valorAP;
+	
+	
+}
+
+int main(){
+	float valorTotal = 0;
+	float pX, qX, ipiX, pY, qY, ipiY;
+	cout << "Valor unitario da peca X: ";
+	cin >> pX;
+	cout << "Quantidade de peca X: ";
+	cin >> qX;
+	cout << "ipi X: ";
+	cin >> ipiX;
+	cout << "Valor unitario da peca Y: ";
+	cin >> pY;
+	cout << "Quantidade de peca Y: ";
+	cin >> qY;
+	cout << "ipi Y: ";
+	cin >> ipiY;
+	valorTotal = valorT(pX, qX, ipiX, pY, qY, ipiY);
+	cout << "Valor total pago: " << valorTotal;
+	
+	if (valorTotal >= 5000 and valorTotal <= 10000){
+		cout << "\nLucro!" << endl;	
+	} else if (valorTotal  > 10000){
+		cout << "\nMuito lucro!" << endl;
+	}
+	
+	return 0;
+}
+
+
+
+
+-----------------------------------
+
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+int leitura(int a, int b, int c, int d, int e, int f){
+	int soma = a + b + c + d + e + f;
+	if (a == b and b == c or d == e and e == f){
+		return 15;
+	} else if (soma % f == 0 ){
+		return soma;
+	}
+	
+}
+
+int main(){
+	int soma = 0;
+	int a, b, c, d, e, f;
+	cout << "Valor de A: ";
+	cin >> a;
+	cout << "Valor de B: ";
+	cin >> b;
+	cout << "Valor de C: ";
+	cin >> c;
+	cout << "Valor de D: ";
+	cin >> d;
+	cout << "Valor de E: ";
+	cin >> e;
+	cout << "Valor de F: ";
+	cin >> f;
+	soma = leitura(a, b, c, d, e, f);
+	cout << "Valor total: " << soma << endl;
+	if (soma == 15){
+		cout << "Otimo!" << endl;
+	} else{
+		cout << "Excelente!" << endl;
+	}
+	return 0;
+}
