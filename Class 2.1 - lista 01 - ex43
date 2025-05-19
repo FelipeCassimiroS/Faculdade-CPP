@@ -1,0 +1,90 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Uma empresa concederá um aumento de salário aos seus funcionários, variável de acordo com o cargo, conforme a tabela abaixo. 
+Faça um algoritmo que leia o salário e o cargo de 	um funcionário e calcule o novo salário. 
+Se o cargo do funcionário não estiver na tabela, ele deverá, então, receber 40% de aumento. Mostre o salário antigo, o novo salário e a diferença.
+Código     Cargo    Percentual
+101        Gerente    10%
+102        Engenheiro 20%
+103        Técnico    30%
+*/
+
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+	
+void salarioT(float salario){
+	int cargo = 0;
+	float salarioN, diferenca, aumento, salarioA;
+	cout << "**********************" << endl;
+	cout << "\n TABELA DE CARGOS   \n" << endl;
+	cout << "**********************\n" << endl;
+	cout << "Codigo-----------Cargos\n" << endl;
+	cout << "101              Gerente" << endl;
+	cout << "102              Engenheiro" << endl;
+	cout << "103              Tecnico" << endl;
+	cout << "---------------------------\n" << endl;
+	cout << "\nCaso seu cargo seja superior, prima qualquer numero!" << endl;
+	cout << "\n-------------------------------------------------\n" << endl;
+	cout << "Digite o codigo: ";
+	cin >> cargo;
+	salarioA = salario;
+	switch(cargo){
+		case 101:
+			cout << "\n-------------------------------------------------\n" << endl;
+			cout << "Gerente  - Aumento de 10%" << endl;
+			aumento = salarioA + (salarioA * 0.1);
+			salarioN = aumento;
+			diferenca = salarioN - salarioA;
+			cout << "Salario antigo: " << salarioA << endl;
+			cout << "Salario ajustado: " << salarioN << endl;
+			cout << "Diferenca: " << diferenca << endl;
+			break;
+			
+		case 102:
+			cout << "\n-------------------------------------------------\n" << endl;
+			cout << "Engenheiro - Aumento de 20%" << endl;
+			aumento = salarioA + (salarioA * 0.2);
+			salarioN = aumento;
+			diferenca = salarioN - salarioA;
+			cout << "Salario antigo: " << salarioA << endl;
+			cout << "Salario ajustado: " << salarioN << endl;
+			cout << "Diferenca: " << diferenca << endl;
+			break;
+			
+		case 103:
+			cout << "\n-------------------------------------------------\n" << endl;
+			cout << "Tecnico - Aumento de 30%" << endl;
+			aumento = salarioA + (salarioA * 0.3);
+			salarioN = aumento;
+			diferenca = salarioN - salarioA;
+			cout << "Salario antigo: " << salarioA << endl;
+			cout << "Salario ajustado: " << salarioN << endl;
+			cout << "Diferenca: " << diferenca << endl;
+			break;	 
+		
+		default:
+			cout << "\n-------------------------------------------------\n" << endl;
+			cout << "Cargo superior - Aumento de 40%" << endl;
+			aumento = salarioA + (salarioA * 0.4);
+			salarioN = aumento;
+			diferenca = salarioN - salarioA;
+			cout << "Salario antigo: " << salarioA << endl;
+			cout << "Salario ajustado: " << salarioN << endl;
+			cout << "Diferenca: " << diferenca << endl;
+			break;		
+	}
+}
+
+int main(){
+	float salario = 0;
+	cout << "Digite seu salario atual: ";
+	cin >> salario;
+	salarioT(salario);
+	
+	
+	return 0;
+}
