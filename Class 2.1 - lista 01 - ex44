@@ -1,0 +1,88 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/* 1. Escrever um algoritmo que lê um conjunto de 4 valores **i, a, b, c**, onde i é um valor inteiro e positivo e **a, b, c**, são quaisquer valores reais e os escreva. A seguir:
+    
+    a) Se **i=1** escrever os três valores **a, b, c** em ordem crescente.
+    
+    b) Se **i=2** escrever os três valores **a, b, c** em ordem decrescente.
+    
+    c) Se **i=3** escrever os três valores **a, b, c** de forma que o maior entre **a, b, c** fique dentre os dois. */
+    
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+float maior(float a, float b){ // funcao para achar o maior de 2 valores.
+	if (a > b){
+		return a;
+	} else {
+		return b;
+	}
+}
+
+float menor(float a, float b){ // funcao para achar o menor de 2 valores.
+	if (a < b){
+		return a;
+	} else {
+		return b;
+	}
+}
+
+
+void crescente(float a, float b, float c, int valor){
+	float maiorDeTodos, meio, menorDeTodas;
+	
+	maiorDeTodos = maior(maior(a, b), c); // variavel maiorDeTodos chamei a funcao maior dentro da funcao maior para achar o maior valor entre A e B e, consequentemente achar o maior entre X e C.
+	
+	if (maiorDeTodos == a){ // fiz a funcao para achar o maior, o menor e o meior entres os tres valores
+		meio = maior(b,c);
+		menorDeTodas = menor(b,c);
+	} else if (maiorDeTodos == b){
+		meio = maior(a,c);
+		menorDeTodas = menor(a,c);
+	} else{
+		meio = maior(a,b);
+		menorDeTodas = menor(a,b);
+	}
+	
+	switch (valor){
+		case 1:
+			cout << "Crescente: " << menorDeTodas << ", " << meio << ", " << maiorDeTodos;
+		break;
+		
+		case 2:
+			cout << "Decrescente: " << maiorDeTodos << ", " << meio << ", " << menorDeTodas;
+		break;
+		
+		case 3:
+			 cout << "Maior no meio: " << menorDeTodas << ", " << maiorDeTodos << ", " << meio;
+			 
+		break;
+		
+		default:
+			cout << "Opcao invalida!" << endl;
+		break;	 
+	}
+}
+
+int main(){
+	int valor;
+	float a, b, c;
+	cout << "Imprima o valor de A: ";
+	cin >> a;
+	cout << "Imprima o valor de B: ";
+	cin >> b;
+	cout << "Imprima o valor de C: ";
+	cin >> c;
+	cout << "\n  Opcoes\n" << endl;
+	cout << "1 - Crescente" << endl;
+	cout << "2 - Decrescente" << endl;
+	cout << "3 - Maior no meio" << endl;
+	cout << "------------------------------\n" << endl;
+	cin >> valor;
+	crescente(a, b, c, valor);
+	
+	return 0;
+}    
