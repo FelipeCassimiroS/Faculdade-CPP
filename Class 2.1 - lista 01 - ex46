@@ -1,0 +1,39 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Faça uma função que retorne o preço de uma conta de luz. 
+Para um cliente que usou até 100 kW, o custo é de R$	0,50 por kW. 
+A partir de 100, o custo é de R$ 0,75 por kW. 
+A partir	de 200 kW, o custo é de R$ 1,20 por kW. 
+A partir de 250 kW, o preço é de R$ 1,50 por kW. 
+Ao final, deve-se acrescentar 20% do valor da conta para o pagamento de impostos.*/
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+void contaLuz(float valor){
+	float conta = 0;
+	float imposto = valor * 0.20;
+	
+	if (valor <= 100){
+		conta = (valor * 0.50);
+	} else if (valor > 100 and valor <= 200){
+		conta = (valor * 0.75);
+	} else if ( valor > 200 and valor <= 250){
+		conta = (valor * 1.20);		
+	} else {
+		conta = (valor * 1.50);
+	}
+	 
+	imposto = conta + (conta * 0.20);
+	cout << imposto << " reais a pagar!";
+}
+
+int main(){
+	float valor;
+	cout << "Quantidade consumida: "; cin >> valor;
+	contaLuz(valor);
+	
+}
