@@ -1,0 +1,41 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Desenvolva um programa que solicite ao usuário um montante em reais (R$). 
+O objetivo é determinar a menor quantidade de cédulas necessárias para compor esse montante, considerando as cédulas disponíveis de R$100, R$50, R$10, R$5 e R$1. 
+Após o cálculo, o programa deve exibir o valor informado pelo usuário e a quantidade de cada cédula necessária.*/
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+void cedulas(int dinheiro){
+	int c100, c50, c20, c10, m1, aux;
+	c100 = dinheiro/100;
+	aux = dinheiro%100;
+	c50 = aux/50; 
+	aux = aux%50;
+	c20 = aux/20;
+	aux = aux%20;
+	c10 = aux/10;
+	m1 = aux%10;
+	
+	
+	cout << c100 << " cedulas de 100" << endl;
+	cout << c50 << " cedulas de 50" << endl;
+	cout << c20 << " cedulas de 20" << endl;
+	cout << c10 << " cedulas de 10" << endl;
+	cout << m1 << " moedas de 1" << endl;
+	
+
+}
+
+int main(){
+	int dinheiro;
+	cout << "Quantidade de dinheiro: ";
+	cin >> dinheiro;
+	cedulas(dinheiro);	
+	
+	return 0;
+}
