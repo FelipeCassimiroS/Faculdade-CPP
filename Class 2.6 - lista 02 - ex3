@@ -1,0 +1,24 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+//Faça um programa que leia N números e informe a soma e a média dos números.
+#include<iostream>
+using namespace std;
+
+float media(float a, float b){
+	float mediaA = a / b;
+	return mediaA;
+}
+
+int main(){
+	float n, quantidade, soma = 0;
+	cin >> quantidade;
+	for (int i = 0; i < quantidade; i++){
+		cout << "Imprima o valor de N: "; cin >> n;	
+		soma = soma + n;	
+	}
+	cout << "Media dos numeros: " << media(soma, quantidade);
+	
+	return 0;
+}
