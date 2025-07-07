@@ -1,0 +1,52 @@
+/*Faça um algoritmo para ler um vetor de 20 números. 
+Após isto, deverá ser lido mais um número qualquer e verificar se esse número existe no vetor ou não. 
+Se existir, o algoritmo deve gerar um novo vetor sem esse número.*/
+
+#include<iostream>
+using namespace std;
+
+void leitura(float *vetor, int tam){
+	float valor; int contador = 0; int tam2 = 0;
+	cout << "Digite um valor: "; cin >> valor;
+	
+	for(int i = 0; i > tam; i++){
+		
+		if(valor == vetor[i]){
+			contador++;
+		}
+		
+		if(contador == 0){
+			cout << "Valor nao encontrado" << endl;
+		}
+		
+		cout << "Valor encontrado! Gerando nova funcao: \n";
+		tam2 = tam - contador;
+		float *vetoraux = new float[tam2]; int j = 0;
+	
+	for(int i = 0; i < tam; i++){
+		if(vetor[i] != valor){
+			vetoraux[j] = vetor[i];
+			j++;
+			}
+		}
+	}
+	
+	for(int j = 0; j < tam2; j++){
+		cout << vetoraux[j];
+	}
+}
+
+int main(){	
+	int tam = 0;
+	
+	cout << "Tamanho do vetor: "; cin >> tam;
+	
+	float *vetor = new float[tam];
+	
+	for(int i = 0; i < tam; i++){
+		cout << i+1 << " elemento do vetor: "; cin >> vetor[i];
+	}
+	 leitura(vetor, tam);
+	 
+	return 0;
+}
