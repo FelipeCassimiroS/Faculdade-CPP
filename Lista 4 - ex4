@@ -1,0 +1,27 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*(Desafio) Faça um programa que cria um vetor com 7 elementos inteiros, 
+lê 7 números do teclado, armazena os números no vetor e imprime em ordem crescente (do menor para o maior valor). 
+OBS: É permitido trocar os elementos do vetor de posição!*/
+
+#include<iostream>
+using namespace std;
+
+void vetorinverso(int *vetor, int tam){
+	for(int i = tam-1; i >= 0; i--){
+		cout << vetor[i] << "\t";
+	}
+}
+
+int main(){
+	int tam = 7;
+	int *vetor = new int[tam];
+	for(int i = 0; i < tam; i++){
+		cout << i+1 << " elemento do vetor: "; cin >> vetor[i];
+	}
+	cout << "Ordem inversa: ";
+	vetorinverso(vetor, tam);
+	return 0;
+}
