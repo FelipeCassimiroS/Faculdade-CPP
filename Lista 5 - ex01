@@ -1,0 +1,41 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Crie uma struct chamada "Pessoa" que armazene os seguintes dados: nome (string), idade (int) e altura (float). 
+Crie uma função para preencher os dados de uma pessoa e outra função para exibir esses dados.*/
+
+#include<iostream>
+using namespace std;
+
+struct Pessoa{
+    string name;
+    string sex;
+    int height;
+    int length;
+};
+
+void imprimeDados(Pessoa &P){
+    cout << "\n------------ Dados -------------\n";
+    cout << "Name: "; cout << P.name << endl;
+    cout << "Sex: "; cout << P.sex << endl;
+    cout << "Height: "; cout << P.height << endl;
+}
+
+void preencheDados(Pessoa &P){
+    cout << "\n-----------------------------------------\n" << endl;
+    cout << "INSIRA SEU NOME: "; cin >> P.name;
+    cout << "INSIRA SEU SEXO: "; cin >> P.sex;
+    cout << "INSIRA SUA ALTURA: "; cin >> P.height;
+    imprimeDados(P);
+}
+
+int main(){
+    
+    Pessoa p1;
+    
+
+    preencheDados(p1);
+       
+    return 0;
+}
