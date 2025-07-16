@@ -1,0 +1,35 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Crie uma struct chamada "Retângulo" que armazene os seguintes dados: largura (float) e altura (float). 
+Crie uma função para calcular a área do retângulo e outra função para calcular o perímetro.*/
+
+#include<iostream>
+using namespace std;
+
+struct Retangulo{
+    float altura;
+    float largura;
+};
+
+float calcperimetro(Retangulo &R){
+    return 2 * (R.altura + R.largura);
+}
+
+float calculaarea(Retangulo &R){
+    return R.altura * R.largura;
+}
+
+
+int main(){
+Retangulo R;
+
+cout << "Altura do retângulo: "; cin >> R.altura;
+cout << "\nLargura do retângulo: "; cin >> R.largura;
+cout << "Area: " << calculaarea(R) << endl;
+cout << "Perimetro: " << calcperimetro(R);
+
+
+    return 0;
+}
