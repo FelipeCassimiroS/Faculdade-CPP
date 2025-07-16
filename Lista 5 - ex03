@@ -1,0 +1,53 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Crie uma struct chamada "Aluno" que armazene os seguintes dados: matrícula (int), nome (string) e notas (array de floats). 
+Crie uma função para preencher as notas de um aluno e outra função para calcular a média das notas.*/
+
+#include<iostream>
+using namespace std;
+
+struct Aluno{
+    int matricula;
+    string nome;
+    float nota;
+    int qtd;
+};
+
+void preencheInfo(Aluno &N){
+    cout << "Nome do aluno: "; cin >> N.nome;
+    cout << "Matricula: "; cin >> N.matricula;
+    cout << "----------------------" << endl;
+}
+
+void preencheNotas(Aluno &N){
+    cout << "Para saber sua media, informe a quantidade de materias: "; cin >> N.qtd;
+
+    for(int i = 0; i < N.qtd; i++){
+        cout << i+1 << " nota: "; cin >> N.nota[i];
+    }
+}
+
+float mediaNotas(Aluno &N){
+    float soma = 0;
+    for(int i = 0; i < N.qtd; i++){
+        soma += N.nota[i];
+    }
+
+    return soma / N.qtd;
+}
+
+int main(){
+
+    Aluno N;
+    N.nota = new float[N.qtd];
+
+    preencheInfo(N);
+    preencheNotas(N);
+
+    float media = mediaNotas(N);
+    cout << " A media das notas eh: " << media;
+
+    return 0;
+}
