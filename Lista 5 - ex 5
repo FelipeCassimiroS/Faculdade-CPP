@@ -1,0 +1,31 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Crie uma struct chamada "Círculo" que armazene o raio (float). 
+Crie uma função para calcular a área do círculo e outra função para calcular o perímetro.*/
+
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+struct Circulo{
+    float raio;
+};
+
+float calculaArea(Circulo &C){
+    return 3.14 * pow(C.raio, 2);
+}
+
+float calculaPerimetro(Circulo &C){
+    return 2 * 3.14 * C.raio; 
+}
+
+int main(){
+    Circulo C;
+    cout << "Informe o raio do circulo: "; cin >> C.raio;
+    cout << "Area: " << calculaArea(C) << endl;
+    cout << "Perimetro: " << calculaPerimetro(C) << endl;
+
+    return 0;
+}
