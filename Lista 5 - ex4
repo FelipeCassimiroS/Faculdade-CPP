@@ -1,0 +1,44 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Crie uma struct chamada "Data" que armazene os seguintes dados: dia (int), mês (int) e ano (int). Crie uma função para verificar se uma data é válida.*/
+
+#include<iostream>
+using namespace std;
+struct Data{
+    int dia;
+    int mes;
+    int ano;
+};
+
+void verificaData(Data &D){
+    if (D.dia > 0 and D.dia <= 31){
+        cout << "Dia Valido" << endl;
+    } else {
+        cout << "Dia Invalido" << endl;
+    }
+
+    if (D.mes > 0 and D.mes <= 12){
+        cout << "Mes Valido" << endl;
+    } else {
+        cout << "Mes Invalido" << endl;
+    }
+
+    if (D.ano > 1900 and D.ano <= 2100){
+        cout << "Ano Valido" << endl;
+    } else {
+        cout << "Ano Invalido" << endl;
+    }
+}
+
+int main(){
+    Data D;
+    cout << "Informe sua data de nascimento!\n";
+    cout << "Dia: "; cin >> D.dia;
+    cout << "Mes: "; cin >> D.mes;
+    cout << "Ano: "; cin >> D.ano;
+    verificaData(D);
+
+    return 0;
+}
