@@ -1,0 +1,33 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Faça um algoritmo para ler um vetor de 10 números.
+ *Após isto, ler mais um número qualquer,
+ *calcular e escrever quantas vezes esse número aparece no vetor.*/
+
+#include<iostream>
+using namespace std;
+
+int main(){
+    int contador;
+    float num = 0;
+    float *vet = new float [10];
+
+    for (int i = 0; i < 10; i++) {
+        cout << i+1 << " posicao do vetor: "; cin >> vet[i];
+    }
+
+    cout << "Digite um numero qualquer: "; cin >> num;
+
+    for (int i = 0; i < 10; i++) {
+        if (num == vet[i]) {
+            contador++;
+        }
+    }
+
+    cout << "O numero " << num << " aparece " << contador << " vezes no vetor!";
+
+
+    return 0;
+}
