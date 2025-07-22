@@ -1,0 +1,24 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Escreva um algoritmo em C que armazene em um vetor os 100 primeiros números ímpares. A
+após isso, o algoritmo deve imprimir todos os valores armazenados.*/
+
+#include <iostream>
+using namespace std;
+
+int main(){
+    int num = 0;
+    int *vet = new int[100];
+
+    for (int i = 0; i < 100; i++) {
+    	num = i;
+        if (num % 2 != 0) {
+            vet[i] = num;
+            cout << vet[i] << "\n";
+        }
+    }
+
+    return 0;
+}
