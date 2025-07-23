@@ -1,0 +1,33 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*Escreva um algoritmo em C que receba oito números do usuário e armazene em um vetor o logaritmo de cada um deles na base 10. 
+Caso não seja possível calcular o valor para o número digitado, o número –1 deve ser atribuído ao elemento do vetor. 
+Após isso, o algoritmo deve imprimir todos os valores armazenados.*/
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main(){
+	int *vet; double num;
+	for (int i = 0; i < 8; i++){
+		
+		cout << i+1 << " valor: "; cin >> num;
+			 
+			 if(num > 0){
+ 		 	 num = log10(num);
+			 } else {
+		 	 num = num -1;
+			 }
+			  	  
+		vet[i] = num;
+	}
+	
+	for (int i = 0; i < 8; i++){
+		cout << vet[i] << "\t";
+	}
+	
+	return 0;
+}
