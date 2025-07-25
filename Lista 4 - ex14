@@ -1,0 +1,65 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*14. Faça um algoritmo em C que crie um vetor dinâmico de tamanho informado pelo usuário, 
+em seguida faça o preenchimento deste array. 
+No preenchimento, temos algumas condições:
+    - Não é permitido valores pares nem valores repetidos.
+    - Dica: faça uma função separada para verificar o número já existe no vetor.
+	 Não se esqueça de avisar o usuário quando ele informar esses valores errados*/
+	  
+#include<iostream>
+using namespace std;
+
+// procurando valor repetindo usando o valor fornecido na funcao de preenchimento.
+int pesquisa(int *vet, int tam, float pesquisado){
+	for (int i = 0; i < tam; i++){
+		if (pesquisado == vet[i]){
+		   	return i;
+		}
+	}
+	
+	  return -1;	
+}
+
+// bool para verificar se é par ou nao. (importante lembrar disso futuramente!)
+bool Par(int valor){
+	if(valor % 2 == 0){
+		return true;
+	} else {
+		return false;
+	}
+}
+
+void imprimir(int *vet, int tam){
+	cout << "Vetor sem elementos repetidos e numeros pares: \n" << endl;
+	for (int i = 0; i < tam; i++){
+		cout << vet[i] << "\t";
+	}
+}
+
+void preenche(int *vet, int tam){
+	float valor = 0; int aux;
+	
+	for (int i = 0; i < tam; i++){ 
+	// enquanto a funcao Par estiver resultando como impar o loop se mantem, ou seja, nao aceita o valor digitado (o mesmo para funcao que pesquisa numeros repetidos)
+			 do{
+		 	 	cout << "[" << i+1 << "]: "; 
+		  		cin >> valor;
+				aux = pesquisa(vet, tam, valor);  			
+			 }while(Par(valor) or aux != -1);
+			 	 			  	 
+ 		 vet[i] = valor;
+	 }
+}
+
+int main(){
+	int tam, valor;	
+	cout << "Tamanho do vetor: "; cin >> tam;	
+	int *vet = new int[tam];
+	preenche(vet, tam);
+	cout << "\n----------------------\n" << endl;
+	imprimir(vet, tam);	
+	return 0;
+}	    
