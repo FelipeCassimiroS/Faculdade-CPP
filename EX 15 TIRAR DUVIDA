@@ -1,0 +1,55 @@
+/*Faça um algoritmo em C que dado um vetor preenchido com N valores, seu programa deve solicitar ao usuário informar um novo número. 
+Seu programa deve verificar se este número está presente em no vetor inicial. 
+Caso este número esteja presente, seu programa deve informar em qual ou quais posições este número se encontra. 
+Assim, você deve criar um novo vetor para armazenar essas posições e retornar para o usuário.*/
+
+#include <iostream>
+using namespace std;
+
+void pesquisaValor(float *vetor, int tam, float valorPesquisado){
+	int contador = 0; int aux = 0;
+	for (int i = 0; i < tam; i++){
+		if (valorPesquisado == vetor[i]){
+		   	cout << "\nAparece na posicao [" << i+1 << "]" << endl;
+		   	contador++;
+		}	 
+	}
+	
+ 	if (contador == 0){
+		   	cout << "\nValor nao encontrado!" << endl;
+		}
+		 
+	cout << "\nO numero -> " << valorPesquisado << " repete " << contador << " vez(es)" << endl;
+	
+	//novo laco tirando as repeticoes~~~~~~~~~~~~~~~~
+	cout << "\n---Novo vetor sem os numeros repetidos---\n ";
+
+	for (int i = 0; i < tam - contador; i++){
+		
+  	   						cout << "\nposicao[" << i+1 << "]: " << vetor[i] << endl;
+		}
+}
+
+//preencher vetor
+void preencheVet(int tam, float *vetor){
+	float valor;
+	
+	cout << "\n-Insira os elementos do vetor-\n";
+	for (int i = 0; i < tam; i++){	
+		cout << "\nposicao[" << i+1 << "]: "; cin >> valor;
+			 vetor[i] = valor;
+	}
+	cout << "\n--------------------------\n";
+}
+
+int main(){
+	int tam; float num; 
+	
+	cout << "Tamanho do vetor: "; cin >> tam;
+	float *vetor= new float [tam];
+	preencheVet(tam, vetor);
+	cout << "\nDigite um numero qualquer: "; cin >> num;
+	pesquisaValor(vetor, tam, num);
+	
+	return 0;
+}
