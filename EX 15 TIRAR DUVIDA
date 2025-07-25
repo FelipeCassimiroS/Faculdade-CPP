@@ -5,6 +5,7 @@ Assim, você deve criar um novo vetor para armazenar essas posições e retornar
 
 #include <iostream>
 using namespace std;
+
 //procura valor repetido no vetor usando a variavel num/valorPesquisado
 void pesquisaValor(float *vetor, int tam, float valorPesquisado){
 	int contador = 0; int aux = 0;
