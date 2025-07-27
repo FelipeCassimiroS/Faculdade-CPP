@@ -1,0 +1,72 @@
+/*20. **Pesquisa de Opinião**
+    
+    Escreva um algoritmo em C++ que leia um vetor com 100 elementos representando as respostas de uma pesquisa de opinião (
+	cada elemento deve conter um valor de 1 a 5, representando uma nota de satisfação). O algoritmo deve calcular e imprimir:
+    
+    1. A quantidade de respostas para cada nota de satisfação (1 a 5).
+    2. A média de satisfação geral.
+    3. A nota de satisfação mais comum (moda) e a quantidade de vezes que ela foi registrada.*/
+    
+	#include <iostream>
+	using namespace std;
+		
+	void contadora(int *vetor, int tam, int satisfacao){
+	int pessima = 0, ruim = 0, media = 0, boa = 0, excelente = 0;
+	
+		for (int i = 0; i < tam; i++){
+				if (vetor[i] == 1){
+				   	pessima++;		 		
+				}
+			 	if (vetor[i] == 2){
+				   	ruim++;	
+				}
+			 	if (vetor[i] == 3){
+				   	media++;		 		
+				}
+				if (vetor[i] == 4){
+				   	boa++;		 		
+				}
+				if (vetor[i] == 5){
+				   	excelente++;		 		
+				} 						
+		}
+		 cout << "\n--Avaliacoes--" << endl;
+		 cout << "Pessimas: " << pessima << endl;	   
+		 cout << "Ruins: " << ruim << endl;
+		 cout << "Medianas: " << media << endl;
+		 cout << "Boas: " << boa << endl;
+		 cout << "Excelentes: " << excelente << endl;
+		 	   
+		 float soma = 0; 
+		 for (int i = 0; i < tam; i++){
+		 	  	soma = vetor[i] + soma;
+					     		
+		 }	    
+		 cout << "\n----------- Media de satisfacao geral --------------\n";
+		 	   
+   		 float mediageral = soma / tam;
+		 cout << "Nota: " <<  mediageral << endl;
+		 
+	}
+	
+	void pesquisa(int *vetor, int tam){
+	int sat;	
+		for (int i = 0; i < tam; i++){
+				do{
+				   	cout << "Sua satisfacao de 1 a 5: "; cin >> sat;		 		    		   	 
+				}while(sat > 5 or sat < 1);
+						   	   
+			vetor[i] = sat;				   	   
+		}
+	contadora(vetor, tam, sat);	 
+	}
+	
+	int main(){
+	int tam = 5;	
+	int *vetor = new int[tam];
+	pesquisa(vetor, tam);
+
+		
+  
+	return 0;
+	}    
