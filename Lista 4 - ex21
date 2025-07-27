@@ -1,0 +1,65 @@
+//Aluno: Felipe Cassimiro Salomão
+//Instituição: IF Sudeste MG - RP
+//Período: Primeiro
+
+/*21. **Análise de Vendas**
+    
+    Escreva um algoritmo em C++ que leia um vetor com 12 elementos representando o faturamento mensal de uma empresa ao longo de um ano. 
+	O algoritmo deve calcular e imprimir:
+    
+    1. O maior e o menor faturamento mensal.
+    2. A média do faturamento anual.
+    3. Os meses em que o faturamento foi inferior à média anual.*/
+    
+#include <iostream>
+using namespace std;
+
+float mediaAnual(int *vet, int tam, int fat){
+	float soma = 0;
+	for (int i = 0; i < tam; i++){
+		soma = vet[i] + soma;
+	}
+	return soma / tam;
+}
+
+int menorFat(int *vet, int tam, int fat){
+	int aux = 999;
+	for (int i = 0; i < tam; i++){
+		if(vet[i] < aux){
+				  	aux = vet[i];
+		}
+	}
+	return aux;
+}
+
+int maiorFat(int *vet, int tam, int fat){
+	int aux = 0;
+	for (int i = 0; i < tam; i++){
+		if(vet[i] > aux){
+				  	aux = vet[i];
+		}
+	}
+	return aux;
+}
+
+void preencheVet(int *vet, int tam){
+	int fat;
+	 for(int i = 0; i < tam; i++){
+	  	cout << "Faturamento do mes: "; cin >> fat;
+  	 		 vet[i] = fat;
+	 }
+	  //chamando outras funcoes
+	cout << "\n---------------------------------\n"; 
+	cout << "Maior faturamento: " << maiorFat(vet, tam, fat) << endl;
+	cout << "Menor faturamento: " << menorFat(vet, tam, fat) << endl; 
+	cout << "Media anual: " << mediaAnual(vet, tam, fat) << endl;
+	cout << "\n---------------------------------\n";  
+}
+
+int main(){
+	int tam = 4;
+	int *vet = new int[tam];
+	preencheVet(vet, tam);
+	
+	return 0;
+}    
