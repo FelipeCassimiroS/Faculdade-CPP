@@ -1,0 +1,121 @@
+#include<iostream>
+using namespace std;
+
+int matrizDinamica(int **matrizA, int tam1){
+	int soma = 0; 
+	for(int i = 0; i < tam1; i++){
+		for (int j = 0; j < tam1; j++){
+			if(i >= j){
+				soma += matrizA[i][j];
+			}	
+		}
+	}
+	for (int i = 0; i < tam1; i++){
+		for(int j = 0; j < tam1; j++){
+			if(i >= j){
+				cout << "[" << matrizA[i][j] << "]" << "\t";
+			} else
+				cout << "[0]" << "\t";
+		} cout << endl;
+	}
+	return soma;
+}
+void comparaAeB(int **matrizA, int **matrizB, int tam1, int tam2){
+	int somaA = 0; int somaB = 0; int maior = 0;
+	
+	for(int i = 0; i < tam1; i++){
+		for (int j = 0; j < tam1; j++){
+				somaA += matrizA[i][j];
+		}
+	}
+	for(int i = 0; i < tam2; i++){
+		for (int j = 0; j < tam2; j++){
+				somaB += matrizB[i][j];
+		}
+	}
+	somaA = somaA - matrizA[0][1];
+	somaB = somaB - matrizB[0][1];
+	
+	if (somaA > somaB){
+		cout << "Maior valor somado eh o da matriz A" << endl;
+		maior = somaA;
+	} else if(somaB > somaA){
+		cout << "Maior valor somado eh o da matriz B" << endl;
+		maior = somaB;
+	} else {
+		maior = somaA;
+		cout << "O valor das matrizes sao iguais" << endl;
+	}
+	cout << "\nSomatorio: " << maior << endl;
+}
+
+//LETRA C ---------------------------------
+void letraC(int **matrizA, int tam1, int aux){
+	int *vet = new int[tam1]; int posicao = 0; int maior = vet[tam1];
+	 
+	//CRIADO VETOR PARA CONTAR AS COLUNAS!!!
+	for (int j = 0; j < tam1; j++){
+		vet[j] = 0;
+	}
+	
+	for(int i = 0; i < tam1; i++){
+		for(int j = 0; j < tam1; j++){
+			if(matrizA[i][j] == aux){
+				vet[j] = vet[j]+1;
+				matrizA[i][j] = 0;
+			}
+		}
+	}
+	//recebendo a posicao da coluna com mais repeticoes
+	for (int j = 0; j < tam1; j++){
+		if ( vet[j] > maior){
+			//maior tem o valor de 0. se vet[j] for maior que zero, zero recebe o valor de vet[j]
+			maior = vet[j];	
+			//na posicao J teve mais alteracoes
+			posicao = j;
+		}
+	}
+	cout << "A coluna que mais teve alteracao foi a " << posicao << endl;
+}
+
+int main(){	
+int **matrizA; int **matrizB;
+int tam1 = 3; int tam2 = 3; int aux = 0;
+matrizA = new int*[tam1];
+matrizB = new int*[tam2];
+
+for (int i = 0; i < tam1; i++){
+		matrizA[i] = new int[tam1];
+	}
+for (int i = 0; i < tam2; i++){
+		matrizB[i] = new int[tam2];
+	}	
+
+
+cout << "------ Matriz A ------" << endl;
+//matrizA--------------
+for (int i = 0; i < tam1; i++){
+		for (int j = 0; j < tam1; j++){
+			cout << "posicao[" << i << "], [" << j << "]: ";
+			cin >> matrizA[i][j];
+		}
+	}
+cout << "------ Matriz B ------" << endl;	
+//matrizB---------------	
+for (int i = 0; i < tam2; i++){
+		for (int j = 0; j < tam2; j++){
+			cout << "posicao[" << i << "], [" << j << "]: ";
+			cin >> matrizB[i][j];
+		}
+	}
+	cout << "\n ----------------------- \n" << endl;
+		 		
+	int total = matrizDinamica(matrizA, tam1);
+	cout << "\nValor do somatorio: " << total << endl;
+	
+	comparaAeB(matrizA, matrizB, tam1, tam2);
+	cout << "Digite um numero inteiro: "; cin >> aux;
+	letraC(matrizA, tam1, aux);	
+	
+	return 0;
+}
