@@ -1,0 +1,99 @@
+/*a) Crie uma estrutura chamada Sargento com os seguintes dados: nome, idade.
+b) Crie uma estrutura chamada Soldado com os seguintes dados: nome, idade.
+c) Crie uma estrutura chamada Tropa com os seguintes dados: nome da tropa, um Sargento, um vetor
+dinâmico de Soldado’s, quantidade de soldados.
+d) Crie uma função que receba como parâmetro uma Tropa e um Soldado. Imprima todos os dados da
+Tropa. Verifique e imprima se o Soldado passado como parâmetro faz parte dessa Tropa.
+e) Crie uma função que receba como parâmetro uma Tropa e um número inteiro. Retorne quantos soldados possuem idade igual ao número inteiro passado como parâmetro.
+f) No main, chame as funções*/
+
+#include <iostream>
+using namespace std;
+
+struct Sargento{
+	int idade;
+	string nome;
+};
+
+struct Soldado{
+	int idade;
+	string nome;
+};
+
+struct Tropa{
+	string nomeDaTropa;
+	Sargento sargento;
+	Soldado* vetSold;
+	int qtdSoldados;
+};
+
+void TropaSoldados(Tropa &T, Soldado &S){
+	bool fazparte = false;
+	cout << "Nome da tropa: " << T.nomeDaTropa << endl;
+	cout << endl;
+	 
+	for(int i = 0; i < T.qtdSoldados; i++){
+		if ( S.nome == T.vetSold[i].nome){
+			fazparte = true;
+		}
+		//NAO ESQUECE QUE [I] É ANTES DO .NOME .IDADE .CARAI A QUATRO!!!!!
+		cout << "Nome do soldado: "<< T.vetSold[i].nome << endl;
+		cout << "Idade: " << T.vetSold[i].idade << endl;
+		cout << "-------------------\n";
+	}
+		cout << "Nome do sargento: " << T.sargento.nome << endl;
+		cout << "idade: " << T.sargento.idade << endl;
+		cout << "-------------------\n";
+	
+	if(fazparte){
+		cout << "Soldado " << S.nome << " faz parte da tropa!" << endl;
+	}
+		cout << "-------------------\n";
+}
+
+int tropaNumInt(Tropa &T, int num){
+	int contador = 0;
+	
+	for(int i = 0; i < T.qtdSoldados; i++){
+		if(T.vetSold[i].idade == num){
+			contador++;
+		} 
+	}
+	return contador;
+}
+
+int main(){
+	
+	//LEMBRAR DE DECLARAR VARIAVEIS USANDO STRUCT!!!
+	int num; Soldado S; Tropa T;
+	
+	cout << "Nome da tropa: "; cin >> T.nomeDaTropa;
+	cout << endl;
+	cout << "Quantidade de soldados: "; cin >> T.qtdSoldados;
+	cout << endl;
+	
+	//criando vetor soldado
+	T.vetSold = new Soldado[T.qtdSoldados];
+	
+	for(int i = 0; i < T.qtdSoldados; i++){
+		cout << "Nome do soldado: "; cin >> T.vetSold[i].nome;
+		cout << "Idade do soldado: "; cin >> T.vetSold[i].idade;
+		cout << "----------------\n";
+	}
+	
+		cout << "Nome do sargento: "; cin >> T.sargento.nome;
+		cout << "Idade do sargento: "; cin >> T.sargento.idade;
+		cout << "------------\n";
+	
+	cout << "Nome desejado: "; cin >> S.nome;
+	cout << endl;
+	
+	TropaSoldados(T, S);
+	
+	cout << "\nDigite um numero inteiro: "; cin >> num;
+	
+	cout << "\nExistem " << tropaNumInt(T, num) << " soldados com essa idade!" << endl;
+	
+	
+	return 0;
+}
